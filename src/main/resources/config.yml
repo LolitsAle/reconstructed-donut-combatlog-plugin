@@ -1,0 +1,37 @@
+default_time: 20
+shard_delay: 1800
+
+elytra: false
+enderpearl: false
+gui: false
+flying: false
+
+commands_not_allowed:
+  - "tpa"
+
+combat_not_allowed_worlds:
+  - "Spawn"
+
+kill_message: "&c{victim} was slain by {attacker}"
+
+messages:
+  combat_timer: "&7Combat: #37BFF9{time}"
+  enderpearl_denied: "&cYou cannot use enderpearls in combat."
+  elytra_denied: "&cYou cannot use elytra in combat."
+  flying_denied: "&cYou cannot fly in combat."
+  gui_denied: "&cYou cannot open GUIs in combat."
+  command_denied: "&cYou cannot do this in combat."
+
+execute:
+  shards_only:
+    commands:
+      attacker:
+        - "give {attacker} shards"
+      victim:
+        - "take {victim} shards"
+    message: "#9D12E9+10 &7for killing {victim}"
+  bounty_only:
+    command: "eco give {attacker} {bounty}"
+    message: "#00FC00+${bounty} &7for killing {victim}"
+  shards_and_bounty:
+    message: "#9D12E9+10 &7and #00FC00+${bounty} &7for killing {victim}"

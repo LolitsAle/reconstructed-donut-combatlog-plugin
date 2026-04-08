@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build plugin (Windows)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\build.ps1"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build plugin (Linux/macOS)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "${workspaceFolder}/build.sh"
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
